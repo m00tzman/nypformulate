@@ -1,13 +1,13 @@
-class CreateFields < ActiveRecord::Migration
+class CreateShipments < ActiveRecord::Migration
   def change
-    create_table :fields do |t|
+    create_table :shipments do |t|
       t.string :date
       t.string :seal
-      t.string :truck
       t.string :company
+      t.string :trucker
       t.string :truckernumber
-      t.string :units
-      t.string :weight
+      t.string :totalcases
+      t.string :totalweight
       t.string :deliverydate
 
       t.timestamps null: false

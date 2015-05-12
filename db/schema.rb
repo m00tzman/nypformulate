@@ -11,32 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508000126) do
+ActiveRecord::Schema.define(version: 20150511201904) do
 
-  create_table "fields", force: :cascade do |t|
+  create_table "forms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "shipment_id"
+  end
+
+  create_table "shipments", force: :cascade do |t|
     t.string   "date"
     t.string   "seal"
-    t.string   "truck"
     t.string   "company"
+    t.string   "trucker"
     t.string   "truckernumber"
-    t.string   "units"
-    t.string   "weight"
+    t.string   "totalcases"
+    t.string   "totalweight"
     t.string   "deliverydate"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  create_table "form_fields", force: :cascade do |t|
-    t.integer  "forms_id"
-    t.integer  "fields_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "forms", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "skids", force: :cascade do |t|
+    t.string   "number"
+    t.string   "po"
+    t.string   "cases"
+    t.string   "weight"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "shipment_id"
   end
 
 end
