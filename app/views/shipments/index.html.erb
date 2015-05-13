@@ -1,0 +1,3 @@
+<% @shipments.each do |shipment| %>
+	<h2><%= link_to shipment.date, shipment_path(shipment) %></h2>
+<% end %>
