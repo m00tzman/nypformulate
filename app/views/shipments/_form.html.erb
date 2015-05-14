@@ -19,9 +19,12 @@
 
         <div class="col-md-12" id="window">
 	        <h3>Skids</h3>
-
 	        <div id="skids">
-	            <%= link_to_add_association 'Add Skid', f, :skids %><%= f.simple_fields_for :skids do |skid| %><%= render "skid_fields", :f => skid %><% end %>
+                <%= f.simple_fields_for :skids do |skid| %>
+                    <%= render "skid_fields", :f => skid %>
+                <% end %>
+            <div class="links">
+	            <%= link_to_add_association 'Add Skid', f, :skids %>
 	        </div>
     	</div>
         <br>

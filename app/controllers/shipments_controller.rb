@@ -24,6 +24,6 @@ class ShipmentsController < ApplicationController
 	end
 
 	def shipment_params
-    	params.require(:shipment).permit(:date, :seal, :company, :trucker, :truckernumber, :totalcases, :totalweight, :deliverydate, :day, skids_attributes: [:id, :number, :po, :cases, :weight, :_destroy])
+    	params.require(:shipment).permit(:date, :seal, :company, :trucker, :truckernumber, :totalcases, :totalweight, :deliverydate, :day, :truckNumber, skids_attributes: [:id, :number, :po, :cases, :weight, :_destroy])
   	end
 end
