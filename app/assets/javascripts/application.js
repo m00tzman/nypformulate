@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require cocoon
+
+function remove_fields(link){
+	$(link).previous("input[type=hidden").value="1";
+	$(link).up("#fields").hide();
+}

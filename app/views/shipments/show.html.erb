@@ -39,7 +39,7 @@
                         <th>Weight</th>
                     </thread>
                     <tbody>
-                        <% @shipment.skids.each do |skid| %>
+                        <% for skid in @shipment.skids %>
                             <tr>
                                 <th> <%= skid.number %> </th>
                                 <th> <%= skid.po %> </th>

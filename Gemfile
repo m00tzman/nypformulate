@@ -20,8 +20,6 @@ gem 'prawn'
 
 gem 'simple_form'
 
-gem 'cocoon'
-
 gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library

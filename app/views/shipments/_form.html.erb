@@ -20,8 +20,8 @@
         <div class="col-md-12" id="window">
 	        <h3>Skids</h3>
 	        <div id="skids">
-                <%= f.simple_fields_for :skids do |skid| %>
-                    <%= render "skid_fields", :f => skid %>
+                <%= f.simple_fields_for :skids do |builder| %>
+                    <%= render "skid_fields", :f => builder %>
                 <% end %>
             <div class="links">
 	            <%= link_to_add_association 'Add Skid', f, :skids %>

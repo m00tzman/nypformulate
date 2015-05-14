@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :skids
 
   resources :shipments do
-    get 'skids'
+    resources 'skids'
   end
 
   root 'shipments#index'
