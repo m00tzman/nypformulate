@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     post 'forms'
   end
 
+  root 'shipments#index'
 end

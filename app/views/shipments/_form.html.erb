@@ -1,34 +1,35 @@
-<div class = "col-md-6">
-	<%= simple_form_for @shipment do |f| %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
 
-		<%= f.input :date, class: 'form-control' %> <br>
+<body>
+    <div class="col-md-7">
+        <div class="col-md-12" id="window">
+            <%= simple_form_for @shipment do |f| %><%= f.input :date, class: 'form-control' %><br>
 
-		<%= f.input :day, class: 'form-control' %> <br>
+            <%= f.input :day, class: 'form-control' %><br>
+            <%= f.input :truckNumber, class: 'form-control', :label => "Truck of the Day" %><br>
+            <%= f.input :seal, class: 'form-control' %><br>
+            <%= f.input :trucker, class: 'form-control', :label => "Carrier" %><br>
+            <%= f.input :truckernumber, class: 'form-control', :label => "Driver + Phone Number" %><br>
+            <%= f.input :deliverydate, class: 'form-control', :label => "Delivery Date" %><br>
+        </div>
 
-		<%= f.input :seal, class: 'form-control' %> <br>
+        <div class="col-md-12" id="window">
+	        <h3>Skids</h3>
 
-		<%= f.input :trucker, class: 'form-control' %> <br>
-
-		<%= f.input :truckernumber, class: 'form-control', :label => "Driver + Phone Number" %> <br>
-
-		<%= f.input :totalcases, class: 'form-control', :label => "Total Cases" %> <br>
-
-		<%= f.input :totalweight, class: 'form-control', :label => "Total Weight" %> <br>
-
-		<%= f.input :deliverydate, class: 'form-control', :label => "Delivery Date" %> <br>
-
-		<h3>skids</h3>
-		<div id ="skids">
-			<%= link_to_add_association 'Add Skid', f, :skids %>
-
-			<%= f.simple_fields_for :skids do |skid| %>
-				<%= render "skid_fields", :f => skid %>
-			<% end %>
-		</div>
-
-
-		<%= f.button :submit %><br>
-
-
-	<% end %>
-</div>
+	        <div id="skids">
+	            <%= link_to_add_association 'Add Skid', f, :skids %><%= f.simple_fields_for :skids do |skid| %><%= render "skid_fields", :f => skid %><% end %>
+	        </div>
+    	</div>
+        <br>
+        <br>
+        <div class = "form-actions">
+            <%= f.button :submit %>
+        </div>
+        <% end %>
+    </div>
+</body>
+</html>
