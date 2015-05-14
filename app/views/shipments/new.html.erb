@@ -1,23 +1,2 @@
-<%= simple_form_for @shipment do |f| %>
-
-	<%= f.input :date %> <br>
-
-	<%= f.input :day %> <br>
-
-	<%= f.input :seal %> <br>
-
-	<%= f.input :trucker %> <br>
-
-	<%= f.input :truckernumber %> <br>
-
-	<%= f.input :totalcases %> <br>
-
-	<%= f.input :totalweight %> <br>
-
-	<%= f.input :deliverydate %> <br>
-
-
-	<%= f.submit %><br>
-
-
-<% end %>
+<h1>Create a new shipment<h2>
+<%= render "form" %>
