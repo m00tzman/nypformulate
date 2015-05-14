@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513005004) do
+ActiveRecord::Schema.define(version: 20150514064053) do
 
   create_table "forms", force: :cascade do |t|
     t.string   "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150513005004) do
     t.string   "trucker"
     t.string   "truckernumber"
     t.integer  "totalcases",    default: 0
-    t.string   "totalweight"
+    t.integer  "totalweight",   default: 0
     t.string   "deliverydate"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
