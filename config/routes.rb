@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :shipments do
     get 'skids'
-    post 'forms'
   end
 
   root 'shipments#index'
