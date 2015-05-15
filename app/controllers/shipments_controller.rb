@@ -15,7 +15,6 @@ class ShipmentsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@shipment = Shipment.new(params[:shipment])
 
 		if @shipment.save
@@ -28,13 +27,22 @@ class ShipmentsController < ApplicationController
 	def edit
 		@shipment = Shipment.find_by_id(params[:id])
 		@skids = @shipment.skids
-		@shipment.skids.build
 	end
 
 	def update
 		@shipment = Shipment.find_by_id(params[:id])
 
 		if @shipment.update_attributes(shipment_params)
+			redirect_to shipments_path
+		else
+			render :new
+		end
+	end
+
+	def destroy
+		@shipment = Shipment.find_by_id(params[:id])
+
+		if @shipment.destroy
 			redirect_to shipments_path
 		else
 			render :new
