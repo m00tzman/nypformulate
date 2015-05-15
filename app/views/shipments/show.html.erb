@@ -34,6 +34,7 @@
                 <table class="table table-striped">
                     <thread>
                         <th>Skid #</th>
+                        <th>Product Name</th>
                         <th>PO #</th>
                         <th>Cases</th>
                         <th>Weight</th>
@@ -42,6 +43,7 @@
                         <% for skid in @shipment.skids %>
                             <tr>
                                 <th> <%= skid.number %> </th>
+                                <th> <%= skid.product %></th>
                                 <th> <%= skid.po %> </th>
                                 <th> <%= skid.cases %> </th>
                                 <th> <%= skid.weight %> </th>
