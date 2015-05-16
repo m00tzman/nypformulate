@@ -33,7 +33,7 @@ class ShipmentsController < ApplicationController
 		@shipment = Shipment.find_by_id(params[:id])
 
 		if @shipment.update_attributes(shipment_params)
-			redirect_to shipments_path
+			redirect_to shipment_path(@shipment)
 		else
 			render :new
 		end
@@ -50,6 +50,6 @@ class ShipmentsController < ApplicationController
 	end
 
 	def shipment_params
-    	params.require(:shipment).permit(:date, :seal, :company, :trucker, :truckernumber, :deliverydate, :day, :truckNumber, skids_attributes: [:id, :shipment_id, :number, :po, :cases, :weight, :_destroy])
+    	params.require(:shipment).permit(:date, :seal, :company, :trucker, :truckernumber, :deliverydate, :day, :truckNumber, skids_attributes: [:id, :shipment_id, :number, :product, :po, :cases, :weight, :_destroy])
   	end
 end

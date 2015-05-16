@@ -12,14 +12,16 @@
         <%= f.input :truckernumber, class: 'form-control', :label => "Driver + Phone Number" %><br>
         <%= f.input :deliverydate, class: 'form-control', :label => "Delivery Date" %><br>
          <h3>Skids</h3>
-         <div id = "skids">
-            <%= f.simple_fields_for(:skids) do |skid| %>
-                <%= render 'skid_fields', :f => skid %>
-            <% end %>
-            <div class ="links">
-                <%= link_to_add_association 'Add Skid', f, :skids %>
-            </div>
-         </div>
+         <div class= "col-md-12" id="window">
+           <div id = "skids">
+              <%= f.simple_fields_for(:skids) do |skid| %>
+                  <%= render 'skid_fields', :f => skid %>
+              <% end %>
+              <div class ="links">
+                  <%= link_to_add_association 'Add Skid', f, :skids %>
+              </div>
+           </div>
+          </div>
          <%= f.submit %>
       <% end %>
    </body>
