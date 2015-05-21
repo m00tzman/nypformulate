@@ -47,6 +47,7 @@ class ShipmentsController < ApplicationController
 		else
 			render :new
 		end
+		
 	end
 
 	def shipment_params
