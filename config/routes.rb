@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 		resources 'forms'
 	end
 	
-root 'shipments#index'
+root 'shipments#home'
 
 end
