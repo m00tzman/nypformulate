@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515233958) do
+ActiveRecord::Schema.define(version: 20150618221833) do
 
   create_table "forms", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "shipment_id"
+  end
+
+  create_table "forms_shipments", id: false, force: :cascade do |t|
+    t.integer "shipment_id", null: false
+    t.integer "form_id",     null: false
+  end
+
+  add_index "forms_shipments", ["form_id", "shipment_id"], name: "index_forms_shipments_on_form_id_and_shipment_id"
+  add_index "forms_shipments", ["shipment_id", "form_id"], name: "index_forms_shipments_on_shipment_id_and_form_id"
+
+  create_table "shipment_forms", force: :cascade do |t|
+    t.integer "shipment_id"
+    t.integer "form_id"
   end
 
   create_table "shipments", force: :cascade do |t|
